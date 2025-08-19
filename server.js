@@ -6,8 +6,8 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // === Настройки ===
-const BOT_TOKEN = 8201854169:AAH4YwzSKOG3miisen8jqfEM_pVFwhl1eNk; // ← Замени!
-const ADMIN_CHAT_ID = 175653928; // ← Замени!
+const BOT_TOKEN = '8201854169:AAH4YwzSKOG3miisen8jqfEM_pVFwhl1eNk'; // ← Замени!
+const ADMIN_CHAT_ID = '175653928'; // ← Замени!
 const WEB_APP_URL = 'https://telegram-food-app.vercel.app';
 
 // === Парсим JSON ===
@@ -91,3 +91,4 @@ app.listen(PORT, () => {
   console.log(`Сервер запущен на порту ${PORT}`);
 
 });
+
