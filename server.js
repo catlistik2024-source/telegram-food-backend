@@ -43,8 +43,14 @@ app.post('/api/order', async (req, res) => {
 
 // === Вебхук для Telegram бота (команды) ===
 app.post(`/bot${BOT_TOKEN}`, async (req, res) => {
+   // Добавь лог для проверки
+  console.log('Пришло обновление:', req.body);
+  
   const message = req.body.message;
-  if (!message) return res.status(200).send();
+  if (!message) {
+    console.log('Нет сообщения');
+    return res.status(200).send(); // ✅ Всегда отвечай!
+  }
 
   const chatId = message.chat.id;
   const text = message.text;
@@ -91,4 +97,5 @@ app.listen(PORT, () => {
   console.log(`Сервер запущен на порту ${PORT}`);
 
 });
+
 
