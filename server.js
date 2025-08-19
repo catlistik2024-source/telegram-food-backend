@@ -10,6 +10,25 @@ const BOT_TOKEN = '8201854169:AAH4YwzSKOG3miisen8jqfEM_pVFwhl1eNk'; // ← За�
 const ADMIN_CHAT_ID = '175653928'; // ← Замени!
 const WEB_APP_URL = 'https://telegram-food-app.vercel.app';
 
+// === Доп логи ===
+app.listen(PORT, () => {
+  console.log(`✅ Сервер запущен на порту ${PORT}`);
+  console.log(`📌 Ожидаем вебхук на /bot${BOT_TOKEN}`);
+});
+
+
+// === Доп команда ===
+app.get('/', (req, res) => {
+  res.send('Backend is running! 🚀');
+});
+
+// Добавь этот маршрут для теста
+app.get('/test', (req, res) => {
+  res.json({ message: 'Server is working', token: BOT_TOKEN });
+});
+
+
+
 // === Парсим JSON ===
 app.use(bodyParser.json());
 
@@ -97,5 +116,6 @@ app.listen(PORT, () => {
   console.log(`Сервер запущен на порту ${PORT}`);
 
 });
+
 
 
