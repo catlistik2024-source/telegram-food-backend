@@ -1,3 +1,6 @@
+console.log('🔧 process.env.PORT =', process.env.PORT);
+console.log('🔧 Адрес, который будет использоваться:', process.env.PORT ? `:${process.env.PORT}` : ':3000 (fallback)');
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const fetch = require('node-fetch');
@@ -116,6 +119,7 @@ app.listen(PORT, () => {
   console.log(`Сервер запущен на порту ${PORT}`);
 
 });
+
 
 
 
